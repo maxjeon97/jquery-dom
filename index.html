@@ -75,6 +75,29 @@
 <script src="https://unpkg.com/jquery"></script>
 <script>
   // Add your code here!
+  $("article img").addClass("image-center");
+
+  $("article p:last-child").remove();
+
+  $("title").css("font-size", Math.floor(Math.random() * 100));
+
+  let $newli = $("<li>").text("Made by Max and Jim!");
+  $("aside ol").append($newli);
+
+  $("aside").empty();
+  let $newParagraph = $("<p>").text("Sorry this list existed...");
+  $("aside").append($newParagraph);
+
+  $(".form-control").on("change", function() {
+    const redVal = $(".form-control").eq(0).val();
+    const blueVal = $(".form-control").eq(1).val();
+    const greenVal = $(".form-control").eq(2).val();
+    $("body").css("background-color", `rgb(${redVal}, ${greenVal},
+    ${blueVal})`)
+  });
+
+  $("img").on("click", function(evt) { $(evt.target).remove(); });
+
 </script>
 </body>
 
